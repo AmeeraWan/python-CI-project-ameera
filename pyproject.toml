@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "example-app"
+version = "0.1.0"
+description = ""
+authors = ["AmeeraWan <n.ameerawan@gmail.com>"]
+readme = "README.md"
+packages = [{include = "example_app"}]
+homepage = "https://github.com/AmeeraWan/python-CI-project-ameera"
+repository = "https://github.com/AmeeraWan/python-CI-project-ameera"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+httpx = "^0.25.0"
+fastapi = "^0.104.0"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.lint.dependencies]
+isort = "^5.12.0"
+black = "^23.10.1"
+flake8 = "^6.1.0"
+mypy = "^1.6.1"
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+# 3rd party import
+ignore_missing_imports = true
+# dynamic typing
+disallow_any_unimported = true
+disallow_any_expr = false
+disallow_any_decorated = false
+disallow_any_explicit = true
+disallow_any_generics = false
+disallow_subclassing_any = true
+# platform
+python_version = "3.10"
+# untyped
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+# None and Optional
+no_implicit_optional = true
+# Warnings
+warn_return_any = false
+warn_unreachable = true
+# Misc
+pretty = true
+
+
+
